@@ -2146,7 +2146,7 @@ fi
     [[ "${#unpacked[1]}" -gt "$longest" ]] && longest="${#unpacked[1]}"
   done
   for c in "${packs[@]}"; do
-    unpacked=( "${(Q@)${(z@)c}}" ) # TODO: #112 ${(Q)${(z@)c}[@]} ?
+    unpacked=( "${(Q)${(z@)c}[@]}" )
     .zi-any-colorify-as-uspl2 "$unpacked[2]"
     builtin print -n "${(r:longest+1:: :)unpacked[1]} $REPLY"
 
